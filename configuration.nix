@@ -114,6 +114,9 @@
     python313
     unzip
 
+    rustc
+    cargo
+
     neovim
     kitty
     fish
