@@ -200,6 +200,9 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+    user = "doeringc";
+    dataDir = "/home/doeringc"; # default location for new folders
+    configDir = "/home/doeringc/.config/syncthing";
   };
   systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true"; # Don't create default ~/Sync folder
 }
