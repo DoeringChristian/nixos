@@ -4,11 +4,14 @@
 {
   config,
   pkgs,
+  inputs,
+  outputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   # Bootloader.
@@ -126,12 +129,14 @@
     fzf
 
     yadm
+    home-manager
 
     easyeffects
 
     pika-backup
     syncthing
     bitwarden-desktop
+    discord
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -205,4 +210,12 @@
     configDir = "/home/doeringc/.config/syncthing";
   };
   systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true"; # Don't create default ~/Sync folder
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs outputs;};
+    users = {
+      # Import your home-manager configuration
+      doeringc = import ./home.nix;
+    };
+  };
 }
