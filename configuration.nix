@@ -133,6 +133,8 @@
 
     yadm
     home-manager
+    gnome3.gnome-tweaks
+    gnomeExtensions.appindicator
 
     easyeffects
 
