@@ -93,6 +93,7 @@
 
     settings = {
       "org/gnome/shell" = {
+        last-selected-power-profile = "performance";
         enabled-extensions = [
           "gsconnect@andyholmes.github.io"
           "appindicatorsupport@rgcjonas.gmail.com"
