@@ -114,6 +114,8 @@
     python313
     unzip
 
+    pixi
+
     rustc
     cargo
 

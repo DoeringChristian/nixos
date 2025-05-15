@@ -81,6 +81,8 @@
     enable = true;
   };
 
+  programs.bottom.enable = true;
+
   dconf = {
     enable = true;
 
