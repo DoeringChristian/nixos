@@ -133,8 +133,10 @@
 
     yadm
     home-manager
-    gnome3.gnome-tweaks
+    dconf-editor
+    gnome-tweaks
     gnomeExtensions.appindicator
+    gnomeExtensions.gsconnect
 
     easyeffects
 
