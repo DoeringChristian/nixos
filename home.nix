@@ -80,4 +80,34 @@
   programs.firefox = {
     enable = true;
   };
+
+  dconf = {
+    enable = true;
+
+    # TODO:
+    # - Disable hot corners
+    # - Disable mouse acceleration
+    # - Scrolling direction
+
+    settings = {
+      "org/gnome/shell" = {
+        enabled-extensions = [
+          "gsconnect@andyholmes.github.io"
+          "appindicatorsupport@rgcjonas.gmail.com"
+        ];
+      };
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        enable-hot-corners = false;
+        show-battery-percentage = true;
+      };
+      "org/gnome/desktop/peripherals/mouse" = {
+        accel-profile = "flat";
+        speed = 0.5;
+      };
+      "org/gnome/desktop/peripherals/touchpad" = {
+        natural-scroll = false;
+      };
+    };
+  };
 }
