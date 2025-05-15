@@ -178,6 +178,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
   hardware = {
     # Enable Graphics
     graphics = {
@@ -201,6 +205,15 @@
         nvidiaBusId = "PCI:01:00:0";
       };
     };
+  };
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      # Add any missing dynamic libraries for unpackaged programs
+      # here, NOT in environment.systemPackages
+      pkgs.libGL
+    ];
   };
 
   # Steam related
