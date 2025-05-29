@@ -128,7 +128,6 @@
     # Terminal tools
     neovim
     kitty
-    # fish -- handled in programs.nix
     starship
     zoxide
     eza
@@ -139,6 +138,7 @@
     wl-clipboard
     xsel
     fzf
+    # fish -- handled in programs.nix
 
     # Tweaks and configs
     yadm
