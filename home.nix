@@ -86,30 +86,34 @@
   dconf = {
     enable = true;
 
-    # TODO:
-    # - Disable hot corners
-    # - Disable mouse acceleration
-    # - Scrolling direction
-
     settings = {
       "org/gnome/shell" = {
+        # Set power profile
         last-selected-power-profile = "performance";
+        # Add extensions
         enabled-extensions = [
           "gsconnect@andyholmes.github.io"
           "appindicatorsupport@rgcjonas.gmail.com"
         ];
       };
+      # Some UI changes (color-scheme, hot-corners and battery percentage)
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         enable-hot-corners = false;
         show-battery-percentage = true;
       };
+      # Mouse config
       "org/gnome/desktop/peripherals/mouse" = {
         accel-profile = "flat";
         speed = 0.5;
       };
+      # Touchpad config
       "org/gnome/desktop/peripherals/touchpad" = {
         natural-scroll = false;
+      };
+      # Configure keybindings
+      "org/gnome/desktop/wm/keybindings" = {
+        switch-windows = ["<Alt>Tab"];
       };
     };
   };
