@@ -17,8 +17,8 @@
     ];
   };
 
-  # Firefox
-  programs.firefox = {
+  # Fish Shell
+  programs.fish = {
     enable = true;
   };
 

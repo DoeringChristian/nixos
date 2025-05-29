@@ -128,7 +128,7 @@
     # Terminal tools
     neovim
     kitty
-    fish
+    # fish -- handled in programs.nix
     starship
     zoxide
     eza
