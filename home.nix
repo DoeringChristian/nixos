@@ -119,6 +119,9 @@
       "org/gnome/desktop/sound" = {
         event-sounds = false;
       };
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "appmenu:minimize,close";
+      };
     };
   };
 }
