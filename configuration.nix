@@ -112,8 +112,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+    # Basic compiler related packages
     git
     curl
     gcc
@@ -126,9 +125,11 @@
 
     pixi
 
+    # Rust packages
     rustc
     cargo
 
+    # Terminal tools
     neovim
     kitty
     fish
@@ -143,6 +144,7 @@
     xsel
     fzf
 
+    # Tweaks and configs
     yadm
     home-manager
     dconf-editor
@@ -150,8 +152,8 @@
     gnomeExtensions.appindicator
     gnomeExtensions.gsconnect
 
+    # Usefull high-level software
     easyeffects
-
     pika-backup
     syncthing
     bitwarden-desktop
