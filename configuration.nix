@@ -138,7 +138,7 @@
     ripgrep
     pixi
     tree-sitter
-    nodejs_23
+    nodejs_24
     wl-clipboard
     xsel
     fzf
