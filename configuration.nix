@@ -19,6 +19,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Always add a swap file
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 64 * 1024;
+    }
+  ];
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -62,7 +70,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -110,6 +118,7 @@
     curl
     gcc
     gnumake
+    ninja
     cmake
     direnv
     python313
@@ -190,16 +199,12 @@
 
     # configure nvidia
     nvidia = {
-      modesetting.enable = true;
-
-      open = false;
-
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-
-      nvidiaPersistenced = true;
-
       nvidiaSettings = true;
-
+      modesetting.enable = true;
+      open = false;
+      powerManagement.enable = true;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
+      # nvidiaPersistenced = true;
       prime = {
         intelBusId = "PCI:00:02:0";
         nvidiaBusId = "PCI:01:00:0";
