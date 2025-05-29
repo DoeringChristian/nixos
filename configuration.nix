@@ -14,6 +14,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./boot.nix
     ./programs.nix
+    ./nvidia.nix
   ];
 
   # Bootloader.
@@ -63,9 +64,6 @@
     layout = "us";
     variant = "";
   };
-
-  # Enable NVIDIA drivers for xserver
-  services.xserver.videoDrivers = ["nvidia"];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -190,27 +188,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
-
-  hardware = {
-    # Enable Graphics
-    graphics = {
-      enable = true;
-    };
-
-    # configure nvidia
-    nvidia = {
-      nvidiaSettings = true;
-      modesetting.enable = true;
-      open = false;
-      powerManagement.enable = true;
-      # package = config.boot.kernelPackages.nvidiaPackages.beta;
-      # nvidiaPersistenced = true;
-      prime = {
-        intelBusId = "PCI:00:02:0";
-        nvidiaBusId = "PCI:01:00:0";
-      };
-    };
-  };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
