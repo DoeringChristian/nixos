@@ -116,6 +116,9 @@
       "org/gnome/desktop/wm/keybindings" = {
         switch-windows = ["<Alt>Tab"];
       };
+      "org/gnome/desktop/sound" = {
+        event-sounds = false;
+      };
     };
   };
 }
