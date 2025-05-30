@@ -147,13 +147,6 @@
     gnome-tweaks
     gnomeExtensions.appindicator
     gnomeExtensions.gsconnect
-
-    # Usefull high-level software
-    easyeffects
-    pika-backup
-    syncthing
-    bitwarden-desktop
-    discord
   ];
 
   environment.variables.EDITOR = "nvim";

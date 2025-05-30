@@ -4,6 +4,13 @@
   inputs,
   ...
 }: {
+  nixpkgs.config = {
+    # Allow unfree packages
+    allowUnfree = true;
+    cudaSupport = true;
+    cudaCapability = ["12.8"];
+  };
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "doeringc";
@@ -20,7 +27,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -37,6 +44,14 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Usefull high-level software
+    easyeffects
+    pika-backup
+    syncthing
+    bitwarden-desktop
+    discord
+    slack
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
