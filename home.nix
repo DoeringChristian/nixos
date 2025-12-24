@@ -16,7 +16,7 @@
       allowUnfreePredicate = _: true;
     };
   };
-  
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -41,7 +41,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    
+
     # Development tools
     git
     vim
@@ -56,7 +56,6 @@
     curl
     wget
 
-    
     # Utilities
     unzip
     zip
@@ -64,25 +63,23 @@
     which
     file
     less
-    
-# System monitoring
+
+    # System monitoring
     btop
     ncdu
     duf
-    
+
     tev
-    
+
     # Network tools
     net-tools
     inetutils
     nmap
     traceroute
-    
+
     # Fonts
     nerd-fonts.fira-code
-    
-  
-    
+
     # Inkscape with TexText extension
     (pkgs.inkscape-with-extensions.override {
       inkscapeExtensions = [
@@ -100,11 +97,11 @@
     obsidian
     darktable
   ];
-  
+
   # Ubuntu-specific: fontconfig for better font rendering
   fonts.fontconfig.enable = true;
 
- # XDG configuration files
+  # XDG configuration files
   xdg.configFile = {
     "fish" = {
       source = ./.config/fish;
@@ -115,10 +112,8 @@
       recursive = true;
     };
   };
-  
 
-
-# Environment variables
+  # Environment variables
   home.sessionVariables = {
     EDITOR = "nvim";
   };
