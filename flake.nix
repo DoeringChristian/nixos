@@ -13,6 +13,8 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+        catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -20,6 +22,7 @@
     nixpkgs,
     home-manager,
     nur,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -42,7 +45,10 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
-        modules = [./home.nix];
+        modules = [
+        ./home.nix
+                catppuccin.homeModules.catppuccin
+        ];
       };
     };
   };

@@ -49,8 +49,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome = {
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverridePackages = [pkgs.mutter];
     extraGSettingsOverrides = ''
@@ -100,8 +100,6 @@
   nixpkgs.config = {
     # Allow unfree packages
     allowUnfree = true;
-    cudaSupport = true;
-    cudaCapability = ["12.8"];
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -190,11 +188,4 @@
     nerd-fonts.fira-code
   ];
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
-    users = {
-      # Import your home-manager configuration
-      doeringc = import ./home.nix;
-    };
-  };
 }

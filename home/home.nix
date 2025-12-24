@@ -4,7 +4,7 @@
   inputs,
   ...
 }: {
-  #Home Manager needs a bit of information about you and the paths it should
+   Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "doeringc";
   home.homeDirectory = "/home/doeringc";
@@ -55,7 +55,6 @@
     jq
     curl
     wget
-
     
     # Utilities
     unzip
@@ -81,7 +80,8 @@
     # Fonts
     nerd-fonts.fira-code
     
-  
+  # Ubuntu-specific: fontconfig for better font rendering
+  fonts.fontconfig.enable = true;
     
     # Inkscape with TexText extension
     (pkgs.inkscape-with-extensions.override {
@@ -100,9 +100,6 @@
     obsidian
     darktable
   ];
-  
-  # Ubuntu-specific: fontconfig for better font rendering
-  fonts.fontconfig.enable = true;
 
  # XDG configuration files
   xdg.configFile = {
