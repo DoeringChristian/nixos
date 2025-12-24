@@ -13,8 +13,8 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-        catppuccin.url = "github:catppuccin/nix";
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -46,8 +46,8 @@
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [
-        ./home.nix
-                catppuccin.homeModules.catppuccin
+          ./home.nix
+          catppuccin.homeModules.catppuccin
         ];
       };
     };
