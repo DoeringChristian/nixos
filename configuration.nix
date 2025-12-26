@@ -11,7 +11,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.home-manager
     ./boot.nix
     ./programs.nix
     ./nvidia.nix
@@ -136,10 +135,23 @@
     wl-clipboard
     xsel
     fzf
+    stow
+
+    # System monitoring
+    btop
+    ncdu
+    duf
     # fish -- handled in programs.nix
 
+    # Network tools
+    net-tools
+    inetutils
+    nmap
+    traceroute
+
+    brave
+
     # Tweaks and configs
-    yadm
     home-manager
     dconf-editor
     gnome-tweaks
@@ -187,5 +199,4 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
-
 }

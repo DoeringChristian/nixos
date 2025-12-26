@@ -17,14 +17,6 @@
     ];
   };
 
-  # Fish Shell
-  programs.fish = {
-    enable = true;
-    # To fix error at startup of fish
-    vendor.config.enable = true;
-    vendor.completions.enable = true;
-  };
-
   # Syncthing
   services.syncthing = {
     enable = true;
