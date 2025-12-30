@@ -6,6 +6,9 @@
   # Enable NVIDIA drivers for xserver
   services.xserver.videoDrivers = ["nvidia"];
 
+  # Enable NVIDIA Container Toolkit for GPU access in containers (podman/distrobox)
+  hardware.nvidia-container-toolkit.enable = true;
+
   hardware = {
     # Enable Graphics
     graphics = {
