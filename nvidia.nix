@@ -8,6 +8,8 @@
 
   # Enable NVIDIA Container Toolkit for GPU access in containers (podman/distrobox)
   hardware.nvidia-container-toolkit.enable = true;
+  # NOTE: to create distrobox with nvidia support run:
+  # ```distrobox create --image ubuntu:latest --name mybox --additional-flags "--device nvidia.com/gpu=all"```
 
   hardware = {
     # Enable Graphics
