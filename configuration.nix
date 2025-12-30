@@ -48,12 +48,10 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm = {
+  services.displayManager.gdm.enable = true;
+  services.displayManager.autoLogin = {
     enable = true;
-    autoLogin = {
-      enable = true;
-      user = "doeringc";
-    };
+    user = "doeringc";
   };
   services.desktopManager.gnome = {
     enable = true;
@@ -193,6 +191,13 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
+  # Disable sleep on lid close (server use)
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchExternalPower = "ignore";
+    lidSwitchDocked = "ignore";
+  };
 
   # Enable bluetooth
   hardware = {
